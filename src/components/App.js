@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
       <Header />
       <Main
         onEditProfile={handleEditProfileClick}
@@ -50,7 +50,8 @@ function App() {
         name="profile"
         title="Редактировать профиль"
         isOpen={isEditProfilePopupOpen}
-        onClose={closeAllPopups}>
+        onClose={closeAllPopups}
+        submitButtonText="Сохранить">
         <input
           id="popup-profile-name"
           className="popup__input popup__input_edit_name"
@@ -73,16 +74,14 @@ function App() {
           maxLength={200}
         />
         <span id="popup-profile-status-error" className="popup__error"></span>
-        <button className="popup__button" type="submit" value="save">
-          Сохранить
-        </button>
       </PopupWithForm>
 
       <PopupWithForm
         name="card"
         title="Новое место"
         isOpen={isAddPlacePopupOpen}
-        onClose={closeAllPopups}>
+        onClose={closeAllPopups}
+        submitButtonText="Сохранить">
         <input
           id="popup-card-title"
           className="popup__input popup__input_edit_title"
@@ -103,26 +102,16 @@ function App() {
           required
         />
         <span id="popup-card-link-error" className="popup__error"></span>
-        <button
-          className="popup__button popup__button_disabled"
-          type="submit"
-          value="save"
-          disabled>
-          Сохранить
-        </button>
       </PopupWithForm>
 
-      <PopupWithForm name="submit" title="Вы уверены?">
-        <button type="submit" className="popup__button">
-          Да
-        </button>
-      </PopupWithForm>
+      <PopupWithForm name="submit" title="Вы уверены?" submitButtonText="Да"></PopupWithForm>
 
       <PopupWithForm
         name="avatar"
         title="Обновить аватар"
         isOpen={isEditAvatarPopupOpen}
-        onClose={closeAllPopups}>
+        onClose={closeAllPopups}
+        submitButtonText="Сохранить">
         <input
           id="popup-avatar"
           className="popup__input popup__input_avatar"
@@ -132,13 +121,10 @@ function App() {
           required
         />
         <span id="popup-avatar-error" className="popup__error"></span>
-        <button className="popup__button" type="submit" value="save" disabled>
-          Сохранить
-        </button>
       </PopupWithForm>
 
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-    </div>
+    </>
   );
 }
 
