@@ -112,7 +112,6 @@ function App() {
     })
     .catch(console.log);
   }
-  
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
