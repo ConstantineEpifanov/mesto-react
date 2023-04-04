@@ -1,5 +1,5 @@
 .card__button-delete {
-  display: none;
+  display: block;
   background-image: url(../../../images/DeleteBin.svg);
   width: 18px;
   height: 19px;
