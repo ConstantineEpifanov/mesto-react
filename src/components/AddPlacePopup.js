@@ -7,9 +7,9 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   const [link, setLink] = useState();
 
   useEffect(() => {
-    setName('');
-    setLink('');
-}, [isOpen]);
+    setName("");
+    setLink("");
+  }, [isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -45,7 +45,7 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
         minLength={2}
         maxLength={30}
         onChange={handleChangeName}
-        value={name}
+        value={name || ""}
       />
       <span id="popup-card-title-error" className="popup__error"></span>
       <input
@@ -56,7 +56,7 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
         placeholder="Ссылка на картинку"
         required
         onChange={handleChangeLink}
-        value={link}
+        value={link || ""}
       />
       <span id="popup-card-link-error" className="popup__error"></span>
     </PopupWithForm>
